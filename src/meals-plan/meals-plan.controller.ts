@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { MealsPlanService } from './meals-plan.service';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';
 import { CreateMemberDto } from './dto/create-member.dto';
@@ -10,6 +10,10 @@ export class MealsPlanController {
   constructor(private readonly mealsPlanService: MealsPlanService) {}
 
   @ApiBearerAuth()
+  @ApiOperation({
+    summary: 'Create a new member',
+    description: 'Adds a new member to the meals plan.',
+  })
   @UseGuards(JwtAuthGuard)
   @Post('create-member')
   async createMember(@Body() createMemberDto: CreateMemberDto) {
@@ -17,6 +21,10 @@ export class MealsPlanController {
   }
 
   @ApiBearerAuth()
+  @ApiOperation({
+    summary: 'Fetch all members',
+    description: 'Fetches a list of all members.',
+  })
   @UseGuards(JwtAuthGuard)
   @Get('members')
   async findAllMembers() {
@@ -24,6 +32,10 @@ export class MealsPlanController {
   }
 
   @ApiBearerAuth()
+  @ApiOperation({
+    summary: 'Get meal plan by member ID',
+    description: 'Fetches details of a specific meal plan by member ID.',
+  })
   @UseGuards(JwtAuthGuard)
   @Get('/members/:memberId')
   async findOne(@Param('memberId') memberId: string) {
