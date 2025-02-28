@@ -9,6 +9,7 @@ import { UsersService } from '../users/users.service';
 import { CreateUserDto } from '../users/dto/create-user.dto';
 import { LoginDto } from './dto/login.dto';
 import { JwtPayload } from './types/jwt-payload.type';
+import { COMMON_MESSAGE, ERROR_MESSAGE } from '../common';
 
 @Injectable()
 export class AuthService {
@@ -22,13 +23,13 @@ export class AuthService {
     const user = await this.usersService.findOneBy({ email });
 
     if (!user) {
-      throw new BadRequestException('Invalid Credentials.');
+      throw new BadRequestException(ERROR_MESSAGE.INVALID_CREDENTIALS);
     }
 
     const isPasswordMatch = await compare(password, user.password);
 
     if (!isPasswordMatch) {
-      throw new BadRequestException('Invalid Credentials.');
+      throw new BadRequestException(ERROR_MESSAGE.INVALID_CREDENTIALS);
     }
 
     const tokenPayload: JwtPayload = {
@@ -40,7 +41,7 @@ export class AuthService {
     delete user.password;
 
     return {
-      message: 'Logged in successfully.',
+      message: COMMON_MESSAGE.SIGNIN_SUCCESSFULLY,
       accessToken,
       user,
     };
@@ -52,14 +53,14 @@ export class AuthService {
     });
 
     if (user) {
-      throw new UnprocessableEntityException('Email is already taken.');
+      throw new UnprocessableEntityException(ERROR_MESSAGE.EMAIL_TAKEN);
     }
 
     user = await this.usersService.create(createUserDto);
     delete user.password;
 
     return {
-      message: 'Registered successfully.',
+      message: COMMON_MESSAGE.SIGNUP_SUCCESSFULLY,
       user,
     };
   }

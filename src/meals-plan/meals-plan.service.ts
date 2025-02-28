@@ -8,7 +8,7 @@ import { MemberRepository } from './member.repository';
 import { MealsPlanRepository } from './meals-plan.repository';
 import { CreateMemberDto } from './dto/create-member.dto';
 import { MemberDocument } from './models/member.schema';
-import { STATIC_MEAL_PLANS } from '../common';
+import { ERROR_MESSAGE, STATIC_MEAL_PLANS } from '../common';
 import { MealPlanDocument } from './models/meal-plan.schema';
 
 @Injectable()
@@ -26,7 +26,9 @@ export class MealsPlanService {
     });
 
     if (member) {
-      throw new UnprocessableEntityException('Member already exists.');
+      throw new UnprocessableEntityException(
+        ERROR_MESSAGE.ALREADY_EXIST('Member'),
+      );
     }
 
     member = await this.memberRepository.create(createMemberDto);
@@ -52,7 +54,7 @@ export class MealsPlanService {
     });
 
     if (!mealPlan) {
-      throw new NotFoundException('Meal plan not found.');
+      throw new NotFoundException(ERROR_MESSAGE.NOT_FOUND('Meal plan'));
     }
 
     return mealPlan;
