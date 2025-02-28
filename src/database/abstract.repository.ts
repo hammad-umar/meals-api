@@ -1,11 +1,4 @@
-import {
-  FilterQuery,
-  Model,
-  PopulateOptions,
-  QueryOptions,
-  Types,
-  UpdateQuery,
-} from 'mongoose';
+import { FilterQuery, Model, QueryOptions, Types, UpdateQuery } from 'mongoose';
 import { Logger } from '@nestjs/common';
 import { AbstractDocument } from './abstract.schema';
 
@@ -22,24 +15,12 @@ export abstract class AbstractRepository<T extends AbstractDocument> {
     return (await createdDocument.save()).toJSON() as T;
   }
 
-  async find(
-    filterQuery: FilterQuery<T>,
-    populateOptions?: PopulateOptions,
-  ): Promise<T[]> {
-    return this.model
-      .find(filterQuery)
-      .populate(populateOptions)
-      .lean<T[]>(true);
+  async find(filterQuery: FilterQuery<T>): Promise<T[]> {
+    return this.model.find(filterQuery).lean<T[]>(true);
   }
 
-  async findOne(
-    filterQuery: FilterQuery<T>,
-    populateOptions?: PopulateOptions,
-  ): Promise<T | null> {
-    const document = await this.model
-      .findOne(filterQuery)
-      .populate(populateOptions)
-      .lean<T>(true);
+  async findOne(filterQuery: FilterQuery<T>): Promise<T | null> {
+    const document = await this.model.findOne(filterQuery).lean<T>(true);
 
     if (!document) {
       this.logger.warn('Document was not found with filterQuery', filterQuery);
@@ -52,11 +33,9 @@ export abstract class AbstractRepository<T extends AbstractDocument> {
     filterQuery: FilterQuery<T>,
     update: UpdateQuery<T>,
     options?: QueryOptions<T>,
-    populateOptions?: PopulateOptions,
   ): Promise<T | null> {
     const document = await this.model
       .findOneAndUpdate(filterQuery, update, { ...options, new: true })
-      .populate(populateOptions)
       .lean<T>(true);
 
     if (!document) {
