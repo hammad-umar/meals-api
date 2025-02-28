@@ -62,6 +62,16 @@ export class MealsPlanService {
     return this.memberRepository.find({});
   }
 
+  async updateMealPlan(
+    memberId: string,
+    meals: string[],
+  ): Promise<MealPlanDocument> {
+    return this.mealsPlanRepository.findOneAndUpdate(
+      { member: new Types.ObjectId(memberId) },
+      { $set: { meals } },
+    );
+  }
+
   generateMealPlan(dietaryRestrictions: string): string[] {
     return STATIC_MEAL_PLANS[dietaryRestrictions];
   }

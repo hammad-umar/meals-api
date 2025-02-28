@@ -22,5 +22,6 @@ import { MealsPlanRepository } from './meals-plan.repository';
   ],
   providers: [MealsPlanService, MemberRepository, MealsPlanRepository],
   controllers: [MealsPlanController],
+  exports: [MealsPlanService],
 })
 export class MealsPlanModule {}
