@@ -1,0 +1,7 @@
+### Steps
+
+1. I create branch name feature/testimonials.
+2. I generate service/controller/module for testimonials using nest cli.
+3. I create mongodb schema for testimonial.
+4. I create a service method to find all the testimonials with filtering logic.
+5. I import the dummy data in mongodb for testimonials collection.

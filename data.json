@@ -1,0 +1,102 @@
+[
+  {
+    "userName": "John Doe",
+    "gender": "Male",
+    "age": 35,
+    "projectName": "Health Tracker",
+    "projectDescription": "An AI-powered health tracking app.",
+    "ethnicity": "Caucasian",
+    "createdAt": "2024-03-08T12:00:00Z",
+    "updatedAt": "2024-03-08T12:00:00Z"
+  },
+  {
+    "userName": "Jane Smith",
+    "gender": "Female",
+    "age": 29,
+    "projectName": "EduLearn",
+    "projectDescription": "An online learning platform for students.",
+    "ethnicity": "Asian",
+    "createdAt": "2024-03-07T14:30:00Z",
+    "updatedAt": "2024-03-07T14:30:00Z"
+  },
+  {
+    "userName": "Carlos Gonzalez",
+    "gender": "Male",
+    "age": 42,
+    "projectName": "FitLife",
+    "projectDescription": "A fitness and wellness coaching app.",
+    "ethnicity": "Hispanic",
+    "createdAt": "2024-03-06T10:15:00Z",
+    "updatedAt": "2024-03-06T10:15:00Z"
+  },
+  {
+    "userName": "Fatima Ahmed",
+    "gender": "Female",
+    "age": 31,
+    "projectName": "Foodie Delight",
+    "projectDescription": "A recipe-sharing and cooking community.",
+    "ethnicity": "Middle Eastern",
+    "createdAt": "2024-03-05T08:45:00Z",
+    "updatedAt": "2024-03-05T08:45:00Z"
+  },
+  {
+    "userName": "Liam O'Connor",
+    "gender": "Male",
+    "age": 27,
+    "projectName": "TravelBuddy",
+    "projectDescription": "A travel planning and booking platform.",
+    "ethnicity": "Irish",
+    "createdAt": "2024-03-04T16:20:00Z",
+    "updatedAt": "2024-03-04T16:20:00Z"
+  },
+  {
+    "userName": "Aisha Khan",
+    "gender": "Female",
+    "age": 34,
+    "projectName": "MindWell",
+    "projectDescription": "A mental health support app.",
+    "ethnicity": "South Asian",
+    "createdAt": "2024-03-03T11:10:00Z",
+    "updatedAt": "2024-03-03T11:10:00Z"
+  },
+  {
+    "userName": "James Brown",
+    "gender": "Male",
+    "age": 39,
+    "projectName": "EcoFriendly",
+    "projectDescription": "A platform for sustainable living tips.",
+    "ethnicity": "African American",
+    "createdAt": "2024-03-02T13:05:00Z",
+    "updatedAt": "2024-03-02T13:05:00Z"
+  },
+  {
+    "userName": "Sophia Lee",
+    "gender": "Female",
+    "age": 26,
+    "projectName": "PetCare",
+    "projectDescription": "A pet adoption and care guidance app.",
+    "ethnicity": "Korean",
+    "createdAt": "2024-03-01T09:50:00Z",
+    "updatedAt": "2024-03-01T09:50:00Z"
+  },
+  {
+    "userName": "Michael Roberts",
+    "gender": "Male",
+    "age": 45,
+    "projectName": "SeniorConnect",
+    "projectDescription": "A social networking app for seniors.",
+    "ethnicity": "Caucasian",
+    "createdAt": "2024-02-28T15:25:00Z",
+    "updatedAt": "2024-02-28T15:25:00Z"
+  },
+  {
+    "userName": "Emily Davis",
+    "gender": "Female",
+    "age": 32,
+    "projectName": "FashionHub",
+    "projectDescription": "An AI-driven fashion styling platform.",
+    "ethnicity": "African",
+    "createdAt": "2024-02-27T18:40:00Z",
+    "updatedAt": "2024-02-27T18:40:00Z"
+  }
+]
