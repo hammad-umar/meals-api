@@ -18,6 +18,7 @@ export class TestimonialsService {
     if (searchTerm) {
       filters.$or = [
         { userName: { $regex: new RegExp(searchTerm, 'i') } },
+        { projectName: { $regex: new RegExp(searchTerm, 'i') } },
         { projectDescription: { $regex: new RegExp(searchTerm, 'i') } },
       ];
     }
